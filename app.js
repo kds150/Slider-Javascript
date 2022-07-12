@@ -54,7 +54,7 @@ smallImage[i].addEventListener('click',function(){
     });
 }
 
-// Button précédent
+// Previous Btn
 prevBtn.addEventListener('click', () => {
 
 if (index == 0){
@@ -70,7 +70,7 @@ console.log(index)
 
 })
 
-// Button suivant
+// Next Btn
 nextBtn.addEventListener('click', () => {
 
 if (index == (cars.length - 1)){
@@ -100,4 +100,4 @@ if( index == (cars.length - 1) ){
     index++;
 }
 
-}, 1000);
+}, 2000);
