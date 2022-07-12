@@ -8,7 +8,7 @@ let index = 0;
 
 
 
-let voitures = [
+let cars = [
 "https://i.gaw.to/content/photos/40/08/400834_Tesla.jpg",
 "https://blobsvc.wort.lu/picture/a527e42e6f1dd983d13a542dc51333f7/1600/600/crop/0/500/3149/1684/wortv3/2009f95e9ac603756226a06cd33d32b7157de876",
 "https://i.ibb.co/NtqFpxs/medium.jpg",
@@ -22,13 +22,13 @@ let voitures = [
 ]
 
 function showcurrentValue (){
-currentValue.innerHTML = `${index+ 1}  / ${voitures.length}`
+currentValue.innerHTML = `${index+ 1}  / ${cars.length}`
 }
 
 console.log(index);
 
-for ( let i=0; i < (voitures.length); i++) {
-smallImg.innerHTML += `<img src="${voitures[i]}" class="small-image ${i == 0 ? 'active': ''}" id="${i}"/>`
+for ( let i=0; i < (cars.length); i++) {
+smallImg.innerHTML += `<img src="${cars[i]}" class="small-image ${i == 0 ? 'active': ''}" id="${i}"/>`
 }
 
 
@@ -46,7 +46,7 @@ smallImage[i].addEventListener('click',function(){
     // console.log(this);
        index = Number(this.id);
        console.log(index)
-       image.src = voitures[index];
+       image.src = cars[index];
        removeClasslist ();
        this.classList.add('active');
        showcurrentValue ()
@@ -58,11 +58,11 @@ smallImage[i].addEventListener('click',function(){
 prevBtn.addEventListener('click', () => {
 
 if (index == 0){
-    index = voitures.length - 1;
+    index = cars.length - 1;
 } else {
     index--;
 }
-image.src = voitures[index];
+image.src = cars[index];
 removeClasslist ();
 smallImage[index].classList.add('active');
 showcurrentValue ();
@@ -73,12 +73,12 @@ console.log(index)
 // Button suivant
 nextBtn.addEventListener('click', () => {
 
-if (index == (voitures.length - 1)){
+if (index == (cars.length - 1)){
     index = 0;
 } else {
     index++;
 }
-image.src = voitures[index];
+image.src = cars[index];
 removeClasslist ();
 smallImage[index].classList.add('active');
 showcurrentValue ();
@@ -88,13 +88,13 @@ console.log(index)
 
 
 setInterval( () => {
-image.src = voitures[index];
+image.src = cars[index];
 removeClasslist ();
 smallImage[index].classList.add('active');
 ;
 showcurrentValue ();
 // console.log(index);
-if( index == (voitures.length - 1) ){
+if( index == (cars.length - 1) ){
     index = 0;
 } else {
     index++;
